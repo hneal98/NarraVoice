@@ -1,0 +1,40 @@
+﻿<Window x:Class="NarraVoice.UI.Windows.VisualizeLaunchDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Visualize Audio"
+        Width="320"
+        Height="160"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Background="#F0F2F5">
+    <StackPanel Margin="24">
+        <TextBlock Text="Choose audio source to analyze:"
+                   FontSize="13"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,16"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    x:Name="PreviewButton"
+                    Content="▶ Preview"
+                    Height="36"
+                    FontSize="13"
+                    Click="OnPreviewClick"/>
+            <Button Grid.Column="2"
+                    x:Name="OtherButton"
+                    Content="📂 Other File"
+                    Height="36"
+                    FontSize="13"
+                    Click="OnOtherClick"/>
+        </Grid>
+        <Button Content="Cancel"
+                Height="28"
+                FontSize="11"
+                Margin="0,10,0,0"
+                Click="OnCancelClick"/>
+    </StackPanel>
+</Window>

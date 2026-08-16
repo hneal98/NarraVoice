@@ -1,0 +1,131 @@
+﻿<Window x:Class="NarraVoice.UI.Dialogs.VoiceBlenderDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Voice Blender"
+        Width="480"
+        SizeToContent="Height"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <StackPanel Margin="16,12">
+
+        <!-- Header -->
+        <TextBlock Text="Blend up to three voices to create a new custom voice."
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"/>
+
+        <!--- Note -->
+        <TextBlock Text="Note: Qwen3-TTS voices cannot be blended and do not appear in these lists."
+           FontStyle="Italic"
+           Foreground="#666666"
+           TextWrapping="Wrap"
+           Margin="0,0,0,10"/>
+
+        <!-- Voice 1 -->
+        <TextBlock Text="Voice 1 (Primary)" FontSize="12" Margin="0,0,0,4"/>
+        <Grid Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="Voice1Combo" Grid.Column="0" Margin="0,0,8,0"/>
+            <Slider x:Name="Voice1Slider" Grid.Column="1"
+                    Minimum="0" Maximum="100" Value="100"
+                    TickFrequency="5" IsSnapToTickEnabled="True"
+                    ValueChanged="OnSliderChanged"/>
+            <TextBlock x:Name="Voice1Label" Grid.Column="2"
+                       Text="100%" VerticalAlignment="Center"
+                       Margin="4,0,0,0"/>
+        </Grid>
+
+        <!-- Voice 2 -->
+        <TextBlock Text="Voice 2" FontSize="12" Margin="0,0,0,4"/>
+        <Grid Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="Voice2Combo" Grid.Column="0" Margin="0,0,8,0"/>
+            <Slider x:Name="Voice2Slider" Grid.Column="1"
+                    Minimum="0" Maximum="100" Value="0"
+                    TickFrequency="5" IsSnapToTickEnabled="True"
+                    ValueChanged="OnSliderChanged"/>
+            <TextBlock x:Name="Voice2Label" Grid.Column="2"
+                       Text="0%" VerticalAlignment="Center"
+                       Margin="4,0,0,0"/>
+        </Grid>
+
+        <!-- Voice 3 -->
+        <TextBlock Text="Voice 3" FontSize="12" Margin="0,0,0,4"/>
+        <Grid Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="Voice3Combo" Grid.Column="0" Margin="0,0,8,0"/>
+            <Slider x:Name="Voice3Slider" Grid.Column="1"
+                    Minimum="0" Maximum="100" Value="0"
+                    TickFrequency="5" IsSnapToTickEnabled="True"
+                    ValueChanged="OnSliderChanged"/>
+            <TextBlock x:Name="Voice3Label" Grid.Column="2"
+                       Text="0%" VerticalAlignment="Center"
+                       Margin="4,0,0,0"/>
+        </Grid>
+
+        <!-- Total indicator -->
+        <Border Background="#F0F4F8"
+                BorderBrush="#B0C4DE"
+                BorderThickness="1"
+                CornerRadius="4"
+                Padding="8"
+                Margin="0,0,0,12">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Total: " FontSize="12"/>
+                <TextBlock x:Name="TotalLabel" Text="100%" FontSize="12" FontWeight="Bold"/>
+                <TextBlock x:Name="TotalWarning"
+                           Text=" — must equal 100% to save"
+                           FontSize="12"
+                           Foreground="#C0392B"
+                           Visibility="Collapsed"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Test sentence -->
+        <TextBlock Text="Test sentence:" FontSize="12" Margin="0,0,0,4"/>
+        <TextBox x:Name="TestSentenceBox"
+                 Text="Rough night with King Tut?"
+                 Margin="0,0,0,8"
+                 Padding="4"/>
+
+        <!-- Voice name -->
+        <TextBlock Text="New voice name:" FontSize="12" Margin="0,0,0,4"/>
+        <TextBox x:Name="VoiceNameBox"
+                 Margin="0,0,0,12"
+                 Padding="4"
+                 TextChanged="OnVoiceNameChanged"/>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Content="Preview"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Click="OnPreviewClick"/>
+            <Button x:Name="SaveBtn"
+                    Content="Save Voice"
+                    Width="90"
+                    Margin="0,0,8,0"
+                    Click="OnSaveClick"
+                    IsEnabled="False"/>
+            <Button Content="Cancel"
+                    Width="80"
+                    Click="OnCancelClick"
+                    IsCancel="True"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

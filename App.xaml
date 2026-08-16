@@ -1,0 +1,13 @@
+﻿<Application x:Class="NarraVoice.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:NarraVoice.UI.Converters"
+             StartupUri="UI/Windows/MainWindow.xaml">
+    <Application.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+        <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibility"/>
+        <converters:ColorStringToBrushConverter x:Key="ColorToBrush"/>
+        <converters:PlaybackStateToIconConverter x:Key="PlaybackStateToIcon"/>
+        <converters:IsPlayingConverter x:Key="IsPlaying"/>
+    </Application.Resources>
+</Application>

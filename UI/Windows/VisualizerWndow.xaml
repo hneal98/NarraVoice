@@ -1,0 +1,105 @@
+﻿<Window x:Class="NarraVoice.UI.Windows.VisualizerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Audio Visualizer"
+        Width="1100"
+        Height="820"
+        Background="#F0F2F5"
+        WindowStartupLocation="CenterOwner"
+        SizeChanged="OnWindowSizeChanged">
+    <DockPanel Margin="8">
+
+        <!-- Top: file info -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="FileLabel"
+                   FontWeight="Bold"
+                   FontSize="13"
+                   Margin="0,0,0,4"/>
+
+        <!-- Status -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="StatusLabel"
+                   FontSize="11"
+                   Foreground="#666"
+                   Margin="0,0,0,6"/>
+
+        <!-- Navigation bar -->
+        <Grid DockPanel.Dock="Bottom" Margin="0,8,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    x:Name="PrevBtn"
+                    Content="◀ Previous"
+                    Width="120"
+                    Height="32"
+                    HorizontalAlignment="Left"
+                    Click="OnPrevSegment"/>
+            <TextBlock Grid.Column="1"
+                       x:Name="SegmentCountLabel"
+                       FontSize="12"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="16,0"
+                       Text="Page 1 of 1"/>
+            <Button Grid.Column="2"
+                    x:Name="NextBtn"
+                    Content="Next ▶"
+                    Width="120"
+                    Height="32"
+                    HorizontalAlignment="Right"
+                    Click="OnNextSegment"/>
+        </Grid>
+
+        <!-- Three panels -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Waveform -->
+            <TextBlock Grid.Row="0"
+                       Text="Waveform (Amplitude)"
+                       FontWeight="SemiBold"
+                       FontSize="12"
+                       Foreground="#333"
+                       Margin="0,4,0,2"/>
+            <Image Grid.Row="1"
+                   x:Name="WaveformImage"
+                   Stretch="Fill"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+
+            <!-- Pitch -->
+            <TextBlock Grid.Row="2"
+                       Text="Pitch (Hz) — dotted = low confidence"
+                       FontWeight="SemiBold"
+                       FontSize="12"
+                       Foreground="#333"
+                       Margin="0,8,0,2"/>
+            <Image Grid.Row="3"
+                   x:Name="PitchImage"
+                   Stretch="Fill"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+
+            <!-- Energy -->
+            <TextBlock Grid.Row="4"
+                       Text="Energy (RMS)"
+                       FontWeight="SemiBold"
+                       FontSize="12"
+                       Foreground="#333"
+                       Margin="0,8,0,2"/>
+            <Image Grid.Row="5"
+                   x:Name="EnergyImage"
+                   Stretch="Fill"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+        </Grid>
+    </DockPanel>
+</Window>

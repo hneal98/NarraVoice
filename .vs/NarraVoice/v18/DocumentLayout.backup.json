@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Apps\\NarraVoice\\source\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\engine\\renderpipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\engine\\renderpipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\ui\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:ui\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\ui\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:ui\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\ui\\dialogs\\instructdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:ui\\dialogs\\instructdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\services\\projectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\services\\projectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\models\\chunkassign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\models\\chunkassign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\models\\preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\models\\preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\ui\\windows\\visualizerwndow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:ui\\windows\\visualizerwndow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\services\\qwenservermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\services\\qwenservermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\config\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\config\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|d:\\apps\\narravoice\\source\\core\\services\\voicemanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E573570A-8962-9189-91C9-3802FBBEFF13}|NarraVoice.csproj|solutionrelative:core\\services\\voicemanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\UI\\Windows\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "UI\\Windows\\MainWindow.xaml",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\UI\\Windows\\MainWindow.xaml",
+              "RelativeToolTip": "UI\\Windows\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-07T18:22:59.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InstructDialog.xaml",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\UI\\Dialogs\\InstructDialog.xaml",
+              "RelativeDocumentMoniker": "UI\\Dialogs\\InstructDialog.xaml",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\UI\\Dialogs\\InstructDialog.xaml",
+              "RelativeToolTip": "UI\\Dialogs\\InstructDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-07T18:22:03.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProjectManager.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Services\\ProjectManager.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\ProjectManager.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Services\\ProjectManager.cs",
+              "RelativeToolTip": "Core\\Services\\ProjectManager.cs",
+              "ViewState": "AgIAAHYBAAAAAAAAAAAswIQBAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T17:44:44.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChunkAssign.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Models\\ChunkAssign.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\ChunkAssign.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Models\\ChunkAssign.cs",
+              "RelativeToolTip": "Core\\Models\\ChunkAssign.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAGyVwHQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T17:41:40.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Preset.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Models\\Preset.cs",
+              "RelativeDocumentMoniker": "Core\\Models\\Preset.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Models\\Preset.cs",
+              "RelativeToolTip": "Core\\Models\\Preset.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAkwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T16:51:57.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RenderPipeline.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Engine\\RenderPipeline.cs",
+              "RelativeDocumentMoniker": "Core\\Engine\\RenderPipeline.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Engine\\RenderPipeline.cs",
+              "RelativeToolTip": "Core\\Engine\\RenderPipeline.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAALgCAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T01:41:50.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Appconfig.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Config\\Appconfig.cs",
+              "RelativeDocumentMoniker": "Core\\Config\\Appconfig.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Config\\Appconfig.cs",
+              "RelativeToolTip": "Core\\Config\\Appconfig.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAcwDUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T22:48:05.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\UI\\Windows\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "UI\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\UI\\Windows\\MainWindow.xaml.cs",
+              "RelativeToolTip": "UI\\Windows\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAFgEAAAAAAAAAAAAwGsEAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T22:45:26.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VoiceManagerService.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Services\\VoiceManagerService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\VoiceManagerService.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Services\\VoiceManagerService.cs",
+              "RelativeToolTip": "Core\\Services\\VoiceManagerService.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAgwD4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T22:44:58.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "QwenServerManager.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\Core\\Services\\QwenServerManager.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\QwenServerManager.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\Core\\Services\\QwenServerManager.cs",
+              "RelativeToolTip": "Core\\Services\\QwenServerManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAvwBMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T21:17:28.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VisualizerWndow.xaml.cs",
+              "DocumentMoniker": "D:\\Apps\\NarraVoice\\source\\UI\\Windows\\VisualizerWndow.xaml.cs",
+              "RelativeDocumentMoniker": "UI\\Windows\\VisualizerWndow.xaml.cs",
+              "ToolTip": "D:\\Apps\\NarraVoice\\source\\UI\\Windows\\VisualizerWndow.xaml.cs",
+              "RelativeToolTip": "UI\\Windows\\VisualizerWndow.xaml.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAAwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T21:01:43.973Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+﻿<Window x:Class="NarraVoice.UI.Windows.VoiceManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Voice Manager"
+        Width="500"
+        Height="620"
+        MinWidth="400"
+        MinHeight="500"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Closing="OnClosing">
+
+    <Grid Margin="12,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,8">
+            <TextBlock Text="Voice Manager"
+                       FontSize="14" FontWeight="Bold"/>
+            <TextBlock Text="Check the voices you want to appear in the dropdown. All voices are downloaded automatically."
+                       TextWrapping="Wrap"
+                       FontSize="11"
+                       Foreground="#555555"
+                       Margin="0,2,0,0"/>
+        </StackPanel>
+
+        <!-- Download status -->
+        <Border Grid.Row="1"
+                x:Name="DownloadBanner"
+                Background="#EBF5FB"
+                BorderBrush="#2E86C1"
+                BorderThickness="1"
+                CornerRadius="4"
+                Padding="8"
+                Margin="0,0,0,8"
+                Visibility="Collapsed">
+            <StackPanel>
+                <TextBlock x:Name="DownloadStatusText"
+                           Text="Downloading voices..."
+                           FontWeight="SemiBold"/>
+                <ProgressBar x:Name="DownloadProgress"
+                             Height="12"
+                             Margin="0,4,0,0"/>
+                <TextBlock x:Name="DownloadDetailText"
+                           FontSize="10"
+                           Foreground="#555555"
+                           Margin="0,2,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Selection buttons -->
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="0,0,0,8">
+            <Button Content="Show All"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Click="OnShowAll"/>
+            <Button Content="Hide All"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Click="OnHideAll"/>
+            <Button Content="English Only"
+                    Width="100"
+                    Click="OnEnglishOnly"/>
+        </StackPanel>
+
+        <!-- Voice list -->
+        <ScrollViewer Grid.Row="3"
+                      VerticalScrollBarVisibility="Auto"
+                      BorderBrush="#CCCCCC"
+                      BorderThickness="1"
+                      Background="#F8F8F8">
+            <StackPanel x:Name="VoiceListPanel" Margin="8"/>
+        </ScrollViewer>
+
+        <!-- Status -->
+        <TextBlock Grid.Row="4"
+                   x:Name="StatusLabel"
+                   FontSize="10"
+                   Foreground="#555555"
+                   Margin="0,6,0,0"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="5"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,8,0,0">
+            <Button Content="Save"
+                    Width="80"
+                    Margin="0,0,8,0"
+                    Click="OnSaveClick"
+                    IsDefault="True"/>
+            <Button Content="Cancel"
+                    Width="80"
+                    Click="OnCancelClick"
+                    IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
