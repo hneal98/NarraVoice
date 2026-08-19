@@ -5,10 +5,6 @@
 using KokoroSharp;
 using KokoroSharp.Core;
 using KokoroSharp.Processing;
-using Microsoft.ML.OnnxRuntime;
-using NarraVoice.Core.Config;
-using NarraVoice.Core.Engine;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -26,29 +26,20 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="KokoroSharp.CPU" Version="0.8.0" />
-    <PackageReference Include="NAudio" Version="2.*" />
-    <PackageReference Include="NAudio.Lame" Version="2.*" />
-    <PackageReference Include="AvalonEdit" Version="6.*" />
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.*" />
-    <PackageReference Include="NAudio.WaveFormRenderer" Version="2.0.0" />
-    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.*" />
-    <PackageReference Include="pythonnet" Version="3.1.0" />
-    <PackageReference Include="SoundTouch.Net" Version="2.*" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="KokoroSharp.CPU" Version="0.8.4" />
+		<PackageReference Include="NAudio" Version="2.*" />
+		<PackageReference Include="NAudio.Lame" Version="2.*" />
+		<PackageReference Include="AvalonEdit" Version="6.*" />
+		<PackageReference Include="DocumentFormat.OpenXml" Version="3.*" />
+		<PackageReference Include="NAudio.WaveFormRenderer" Version="2.0.0" />
+		<PackageReference Include="Ookii.Dialogs.Wpf" Version="5.*" />
+		<PackageReference Include="System.Drawing.Common" Version="10.0.11" />
+	</ItemGroup>
 
   <ItemGroup>
     <Content Include="rubberband-dll-x64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NAudio" Version="*" />
-    <PackageReference Include="AvalonEdit" Version="*" />
-    <PackageReference Include="DocumentFormat.OpenXml" Version="*" />
-    <PackageReference Include="System.Drawing.Common" Version="10.0.10" />
-  </ItemGroup>
-
 </Project>

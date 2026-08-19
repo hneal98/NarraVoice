@@ -1,0 +1,130 @@
+markdown
+# NarraVoice
+
+A local, offline text-to-speech narration studio for turning story files into audiobooks — no cloud APIs, no per-character billing, no subscription.
+
+NarraVoice runs entirely on your machine. The default engine, **Kokoro**, is CPU-friendly out of the box, so it works well even on older or integrated GPUs. An optional second engine, **Qwen3-TTS**, is available for higher-quality synthesis when you have the hardware (or patience) for it.
+
+## Why NarraVoice
+
+- **Fully offline** — both TTS engines run locally; nothing is sent to a cloud API.
+- **CPU-first** — optimized to run well without a dedicated GPU.
+- **Dual-engine** — mix Kokoro and Qwen3-TTS voices in the same project, even the same story.
+- **Per-line voice control** — a preset/gutter system lets you arm a different voice, pitch, rate, or volume for any stretch of text, and it holds until the next marker. Great for multi-character dialogue or shifting a single character's tone mid-scene.
+- **PDF/DOCX/TXT ingestion** — drop in a story file and NarraVoice chunks it automatically at sentence boundaries (~2500 characters per chunk) for editing and rendering.
+- **Full pipeline** — edit → preview → render each chunk → merge into one finished MP3 audiobook.
+- **Combine external audio** — stitch in audio generated outside NarraVoice, not just its own output.
+- **Built-in visualizer** — waveform, pitch (Hz), and energy (RMS) view for any rendered preview, useful for spotting flat delivery or odd chunk-boundary artifacts.
+- **Pronunciation control** — Smart IPA overrides for Kokoro (with homograph handling via a built-in dictionary + eSpeak NG fallback), plus a global substitution list for both engines.
+
+## Quick Setup
+
+### 1. Folder layout
+
+A typical install looks like this (adjust paths to your own setup):
+
+YourInstallFolder\NarraVoice
+config.json
+narration_config.json
+substitutions.json
+voice_preferences.json
+projects
+models\kokoro\Kokoro-v1.0.onnx
+models\kokoro\voices\ ← *.bin voice files
+models\Qwen\qwen_server.py ← optional
+models\Qwen\Qwen3-TTS-1.7B-real\ ← optional model tree
+espeak\ ← optional full eSpeak NG copy
+
+
+### 2. config.json (example)
+
+```json
+{
+  "base_dir": "C:\\Path\\To\\NarraVoice",
+  "app_dir": "C:\\Path\\To\\NarraVoice",
+  "models_dir": "C:\\Path\\To\\NarraVoice\\models",
+  "voices_dir": "C:\\Path\\To\\NarraVoice\\models\\kokoro\\voices",
+  "projects_dir": "C:\\Path\\To\\NarraVoice\\projects",
+  "kokoro_model_path": "C:\\Path\\To\\NarraVoice\\models\\kokoro\\Kokoro-v1.0.onnx",
+  "qwen_server_script": "C:\\Path\\To\\NarraVoice\\models\\Qwen\\qwen_server.py",
+  "espeak_path": "C:\\Program Files\\eSpeak NG\\espeak-ng.exe",
+  "device": "cpu"
+}
+```
+
+Place `config.json` next to the NarraVoice executable and update the paths to match your install. eSpeak can stay in `Program Files`; only copy the full eSpeak NG folder under `espeak\` if you want a portable install.
+
+### 3. Kokoro voices
+
+On first use: **Tools → Voice Manager / Download Voices**. Missing English voice `.bin` files download automatically. Defaults show `en-us` and `en-gb` only — use **Show All** for other languages.
+
+### 4. Optional: Qwen3-TTS
+
+Qwen3 unlocks a second, higher-quality voice engine at the cost of extra setup and slower CPU-only synthesis.
+
+> **A note on "optional":** Qwen3-TTS as a whole is optional — if you don't want it, skip this section entirely and NarraVoice works fine on Kokoro alone. But if you *do* choose to use Qwen3, every step below stops being optional and becomes required. There's no partial setup.
+
+- Install Python. Development and testing were done on **3.13.14** — other versions haven't been tested and may or may not work.
+- Download the Qwen3-TTS model and server script from [source/link] and place them under `models\Qwen\` (or point `qwen_server_script` at wherever you put them).
+- The first Qwen preview starts a local server at `http://127.0.0.1:8765` automatically.
+
+### 5. Your first project
+
+**New Project** → pick a story file (`.txt`, `.docx`, `.pdf`) → edit a chunk → **Preview**. Once all chunks in a story are rendered, **Merge** produces one MP3 under `audiobooks\`.
+
+## Quick Reference
+
+| Task | How |
+|---|---|
+| Add pronunciation | Right-click word → Smart IPA (Kokoro only) |
+| Insert a pause | Silence button, `<sil:500ms>`, or a blank line |
+| Hear current chunk | Preview |
+| Hear selected text | Highlight text → Preview |
+| Replay last preview | Play |
+| Fix flat question intonation | Use `bf_alice` or `af_jessica`, or blend them |
+| Manage which voices show | Tools → Voice Manager / Download Voices |
+| Set a Qwen style note | Select a Qwen voice → **Instruct…** button appears below the voice dropdown |
+| Fix odd/silent audio | See **Phantom Sounds**, below |
+
+## Voice & Preset System
+
+Save a Voice + Rate + Pitch + Volume combination as a named **preset** (each gets a gutter color). Arm a preset in the left margin and it applies from that line until the next marker — this is how you get multiple voices, or the same voice in different moods, within one story.
+
+For **Qwen voices only**, a preset can also carry an **Instruct** — a short style note (e.g. "speak angrily") that's saved with the project and applied every time that preset renders. There's a second, separate **session Instruct** for quick one-off experiments that is *not* saved between app restarts.
+
+**Render priority for a given line:**
+1. Preset Instruct (if the line is marked with a preset that has one)
+2. Session Instruct (if set)
+3. No instruct
+
+Kokoro voices always ignore Instruct — pitch/rate/volume are the only controls there.
+
+## Pronunciation
+
+- **Kokoro**: right-click any word → **Smart IPA** for a homograph-aware suggestion (backed by a built-in dictionary, falling back to eSpeak NG), or add it to the global substitution list.
+- **Qwen3**: doesn't use IPA. Instead, spell the word the way it should sound (e.g. write "reed" if you mean the present tense of "read").
+- Don't combine a global substitution and an inline IPA override on the same word — pick one.
+- **Heteronyms** (read/read, lead/lead, live/live, etc.) aren't resolved automatically — text-to-speech in general still struggles with these. NarraVoice gives you manual override tools rather than guessing; expect the occasional line to need a one-off fix.
+
+## Troubleshooting
+
+**Phantom sounds** — usually an empty segment caused by stray quote characters, runs of punctuation, or too many blank lines. Prefer the Silence button or a single `<sil:...>` tag over blank lines for pacing.
+
+**Pitch** — stay roughly within −6 to +6 semitones; above about +5 tends to sound harsh. Pitch changes overall pitch only — it's not a substitute for a voice with better natural prosody.
+
+## Known Limitations
+
+- Most Kokoro voices have limited question-intonation (prosody) — `bf_alice` and `af_jessica` are the strongest, or blend them.
+- Cancel during synthesis isn't instant, and occasionally doesn't stop an in-flight Kokoro segment at all.
+- Qwen3 requires a separate Python + server + model install, and is noticeably slower than Kokoro on CPU-only hardware.
+- Multi-voice dialogue *within a single sentence* often sounds unnatural — presets work best when switching voices at line/paragraph boundaries, or for shifting one narrator's emotional tone.
+- Session Instruct is intentionally not persisted across restarts.
+- Heteronyms need manual pronunciation overrides — see **Pronunciation**, above.
+
+## Full Documentation
+
+See the [User Guide](./docs/NarraVoice_User_Guide.md) for the complete editor reference, keyboard shortcuts, and every setting in depth.
+
+## License
+
+*(add your chosen license here, and confirm Kokoro's and Qwen3's licenses are compatible with it — credit both projects in a NOTICE file if required by their terms)*

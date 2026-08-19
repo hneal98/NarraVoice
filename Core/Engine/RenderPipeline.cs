@@ -17,13 +17,11 @@ using DocumentFormat.OpenXml.InkML;
 using KokoroSharp;
 using KokoroSharp.Core;
 using KokoroSharp.Processing;
-using KokoroSharp.Utilities;
 using Microsoft.ML.OnnxRuntime;
 using NarraVoice.Core.Models;
 using NarraVoice.Core.Services;
 using NarraVoice.Core.Config;
 using NAudio.Wave;
-using SoundTouch;
 using System.IO;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

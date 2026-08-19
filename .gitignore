@@ -3,3 +3,6 @@ bin/
 obj/ 
 *.bin 
 *.onnx 
+*.user
+*.dll
+*.pdb
