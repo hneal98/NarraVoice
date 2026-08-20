@@ -291,4 +291,8 @@ Paths come from config.json beside the app. Large models can stay on a data driv
 
 • Qwen needs extra install (Python + server + models), also Qwen is much slower using CPU only
 
+<<<<<<< HEAD
 • Multi-voice dialogue in one sentence often sounds unnatural — presets work best for emotion with one narrator voice
+=======
+• Multi-voice dialogue in one sentence often sounds unnatural — presets work best for emotion with one narrator voice
+>>>>>>> 46000f67776d7f6260e74c1248354b534ee1c8ae
