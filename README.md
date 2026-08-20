@@ -5,6 +5,11 @@ Offline Windows TTS narration studio (Kokoro). Not affiliated with narravoice.co
 
 A local, offline text-to-speech narration studio for turning story files into audiobooks — no cloud APIs, no per-character billing, no subscription.
 
+**Two engines in one app**
+Kokoro — fast, fully local, lightweight
+Qwen3-TTS — higher expressiveness (optional through Python path)
+Use either (or both) in the same project: same editor, presets, chunking, and export pipeline.
+
 NarraVoice runs entirely on your machine. The default engine, **Kokoro**, is CPU-friendly out of the box, so it works well even on older or integrated GPUs. An optional second engine, **Qwen3-TTS**, is available for higher-quality synthesis when you have the hardware (or patience) for it.
 
 ## Why NarraVoice
