@@ -127,4 +127,6 @@ See the [User Guide](./docs/NarraVoice_User_Guide.md) for the complete editor re
 
 ## License
 
-*(add your chosen license here, and confirm Kokoro's and Qwen3's licenses are compatible with it — credit both projects in a NOTICE file if required by their terms)*
+NarraVoice is licensed under the MIT License — see [LICENSE](LICENSE).
+
+Third-party packages and user-installed models are covered in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Kokoro and Qwen3-TTS model weights are Apache 2.0 and are not redistributed with this project; download them separately.
