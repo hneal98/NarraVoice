@@ -58,6 +58,13 @@ namespace NarraVoice.Core.Config
             Get("base_dir", DefaultDataRoot);
 
         /// <summary>
+        /// Scratch / preview / visualizer work files.
+        /// Default: {BaseDir}\temp  (not Windows %TEMP%).
+        /// </summary>
+        public static string TempDir =>
+            Get("temp_dir", Path.Combine(BaseDir, "temp"));
+
+        /// <summary>
         /// App-level files (narration_config, substitutions, voice_preferences).
         /// Defaults to BaseDir (same tree as projects/models).
         /// </summary>
@@ -141,6 +148,7 @@ namespace NarraVoice.Core.Config
             {
                 ["base_dir"] = baseDir,
                 ["app_dir"] = baseDir,
+                ["temp_dir"] = Path.Combine(baseDir, "temp"),
                 ["models_dir"] = Path.Combine(baseDir, "models"),
                 ["voices_dir"] = Path.Combine(baseDir, "voices"),
                 ["projects_dir"] = Path.Combine(baseDir, "projects"),

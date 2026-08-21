@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using NarraVoice.Core.Config;
 using NarraVoice.Core.Engine;
 using NarraVoice.Core.IPA;
 using NarraVoice.Core.Models;
@@ -175,7 +176,7 @@ namespace NarraVoice.UI.Windows
 
                 // Render to temp folder
                 string tmpDir = Path.Combine(
-                    Path.GetTempPath(), "NarraVoice_Scratch");
+                    AppConfig.TempDir, "NarraVoice_Scratch");
 
                 var result = await _pipeline.RenderChunkAsync(
                     text, profile, tmpDir,

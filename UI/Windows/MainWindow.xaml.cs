@@ -809,17 +809,19 @@ namespace NarraVoice.UI.Windows
 
             try
             {
-                string tmpDir = Path.Combine(Path.GetTempPath(), "NarraVoice");
-                Directory.CreateDirectory(tmpDir);
+                if (_projectDir == null)
+                {
+                    AppendLog("No project open — cannot save preview to project audio.");
+                    return;
+                }
 
-                // === CRITICAL: Fully release previous audio file ===
-                //_player.Unload();
-                await Task.Delay(50);                    // Give OS time to release file handle
+                string audioDir = ProjectManager.AudioDir(_projectDir);
+                Directory.CreateDirectory(audioDir);
 
                 var result = await _pipeline.RenderChunkAsync(
                     text,
                     GetCurrentProfile(),
-                    tmpDir,
+                    audioDir,   // was AppConfig.TempDir / tmpDir
                     chunkIndex: -1,
                     prefix: _projectConfig.Slug,
                     presetChanges: presetChanges,
@@ -933,13 +935,16 @@ namespace NarraVoice.UI.Windows
 
         private void OnVisualize(object? sender, RoutedEventArgs? e)
         {
-            string tmpDir = Path.Combine(Path.GetTempPath(), "NarraVoice");
-            string previewPath = Path.Combine(tmpDir,
-                $"{_projectConfig.Slug}_preview.wav");
+            if (_projectDir == null || _projectConfig == null)
+            {
+                AppendLog("No project open.");
+                return;
+            }
+
+            string audioDir = ProjectManager.AudioDir(_projectDir);
+            string previewPath = Path.Combine(audioDir, $"{_projectConfig.Slug}_preview.wav");
 
             var launcher = new VisualizeLaunchDialog(previewPath, this);
-
-            // Disable Preview button if no preview file exists
             launcher.SetPreviewAvailable(File.Exists(previewPath));
 
             if (launcher.ShowDialog() != true || string.IsNullOrEmpty(launcher.SelectedPath))
@@ -947,8 +952,8 @@ namespace NarraVoice.UI.Windows
 
             bool isPreview = launcher.SelectedPath == previewPath;
             var boundaryTimes = isPreview ? _lastSegmentBoundaryTimes : new List<(double Time, string Text)>();
-
             var timings = isPreview ? _lastSegmentTimings : new List<SegmentTiming>();
+
             var win = new VisualizerWindow(launcher.SelectedPath, boundaryTimes, timings, this);
             win.Show();
         }

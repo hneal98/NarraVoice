@@ -7,5 +7,6 @@
 "qwen_server_script": "D:\\Apps\\NarraVoice\\source\\scripts\\qwen\\qwen_server.py",
 "espeak_path":        "D:\\Apps\\NarraVoice\\espeak\\espeak-ng.exe",
 "QwenScriptsDir":     "D:\\Apps\\NarraVoice\\tools\\qwen",
+"temp_dir": 	      "D:\\Apps\\NarraVoice\\temp",
 "device":             "cpu"
 }

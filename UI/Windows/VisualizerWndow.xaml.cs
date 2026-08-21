@@ -1,6 +1,7 @@
 ﻿// VisualizerWindow.xaml.cs
 // 3-panel analysis: Waveform, Pitch, Energy.
 // Pages by fixed time windows (default 8s) so long files stay readable.
+using NarraVoice.Core.Config;
 using NarraVoice.Core.Services;
 using NAudio.Wave;
 using NAudio.WaveFormRenderer;
@@ -174,7 +175,7 @@ namespace NarraVoice.UI.Windows
             float[] segSamples = _result.Waveform[startSample..endSample];
 
             string tempPath = Path.Combine(
-                Path.GetTempPath(), $"nv_viz_{Guid.NewGuid()}.wav");
+                AppConfig.TempDir, $"nv_viz_{Guid.NewGuid()}.wav");
             try
             {
                 WriteSegmentWav(segSamples, (int)_result.SampleRate, tempPath);

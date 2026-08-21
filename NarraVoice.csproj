@@ -25,6 +25,9 @@
     <None Update="voice_preferences.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="KokoroSharp.CPU" Version="0.8.4" />

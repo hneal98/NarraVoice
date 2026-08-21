@@ -633,7 +633,7 @@ namespace NarraVoice.Core.Engine
 
             var tempFiles = new List<string>();
             var allSamples = new List<float>();
-            string tmpDir = Path.Combine(Path.GetTempPath(), "NarraVoice");
+            string tmpDir = AppConfig.TempDir;
             Directory.CreateDirectory(tmpDir);
 
             for (int i = 0; i < segments.Count; i++)
