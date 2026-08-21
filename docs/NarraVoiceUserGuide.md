@@ -8,7 +8,7 @@ NarraVoice is a local text-to-speech narration studio for turning story files in
 
 Use this once when installing or moving NarraVoice on a new machine.
 
-### **1\. Folder layout**
+### **1. Folder layout**
 
 A typical layout on a data drive:
 
@@ -16,11 +16,11 @@ D:\\Apps\\NarraVoice\\
 
 config.json
 
-narration_config.json
+narration\_config.json
 
 substitutions.json
 
-voice_preferences.json
+voice\_preferences.json
 
 projects\\
 
@@ -28,31 +28,31 @@ models\\kokoro\\Kokoro-v1.0.onnx
 
 models\\kokoro\\voices\\ ← \*.bin voice files
 
-models\\Qwen\\qwen_server.py ← optional
+models\\Qwen\\qwen\_server.py ← optional
 
 models\\Qwen\\Qwen3-TTS-1.7B-real\\ ← optional model tree
 
 espeak\\ ← optional full eSpeak NG copy
 
-### **2\. config.json (example)**
+### **2. config.json (example)**
 
 {
 
-"base_dir": "D:\\\\Apps\\\\NarraVoice",
+"base\_dir": "D:\\\\Apps\\\\NarraVoice",
 
-"app_dir": "D:\\\\Apps\\\\NarraVoice",
+"app\_dir": "D:\\\\Apps\\\\NarraVoice",
 
-"models_dir": "D:\\\\Apps\\\\NarraVoice\\\\models",
+"models\_dir": "D:\\\\Apps\\\\NarraVoice\\\\models",
 
-"voices_dir": "D:\\\\Apps\\\\NarraVoice\\\\models\\\\kokoro\\\\voices",
+"voices\_dir": "D:\\\\Apps\\\\NarraVoice\\\\models\\\\kokoro\\\\voices",
 
-"projects_dir": "D:\\\\Apps\\\\NarraVoice\\\\projects",
+"projects\_dir": "D:\\\\Apps\\\\NarraVoice\\\\projects",
 
-"kokoro_model_path": "D:\\\\Apps\\\\NarraVoice\\\\models\\\\kokoro\\\\Kokoro-v1.0.onnx",
+"kokoro\_model\_path": "D:\\\\Apps\\\\NarraVoice\\\\models\\\\kokoro\\\\Kokoro-v1.0.onnx",
 
-"qwen_server_script": "D:\\\\Apps\\\\NarraVoice\\\\models\\\\Qwen\\\\qwen_server.py",
+"qwen\_server\_script": "D:\\\\Apps\\\\NarraVoice\\\\models\\\\Qwen\\\\qwen\_server.py",
 
-"espeak_path": "C:\\\\Program Files\\\\eSpeak NG\\\\espeak-ng.exe",
+"espeak\_path": "C:\\\\Program Files\\\\eSpeak NG\\\\espeak-ng.exe",
 
 "device": "cpu"
 
@@ -60,35 +60,35 @@ espeak\\ ← optional full eSpeak NG copy
 
 Place config.json next to the NarraVoice executable. Adjust paths if your folders differ. eSpeak can stay in Program Files; only copy the full eSpeak NG folder under espeak\\ if you want it portable.
 
-### **3\. Kokoro voices**
+### **3. Kokoro voices**
 
 On first use, open Tools → Voice Manager / Download Voices. Missing English voice .bin files can download automatically. Defaults show en-us and en-gb only; use Show All for other languages.
 
-### **4\. Optional: Qwen3**
+### **4. Optional: Qwen3**
 
 • Install Python 3.13.14 (version used in development)
 
-• Place qwen_server.py and the model tree under models\\Qwen\\ (or set qwen_server_script)
+• Place qwen\_server.py and the model tree under models\\Qwen\\ (or set qwen\_server\_script)
 
-• First Qwen preview starts the local server at <http://127.0.0.1:8765>
+• First Qwen preview starts the local server at [http://127.0.0.1:8765](http://127.0.0.1:8765)
 
-### **5\. First project**
+### **5. First project**
 
 New Project → pick a story file → edit a chunk → Preview. When chunks are rendered after editing, merge produces one MP3 under audiobooks\\ from each chunk mp3.
 
 # **Quick Reference**
 
-| **Task**                     | **How**                                                                            |
-| ---------------------------- | ---------------------------------------------------------------------------------- |
-| **Add pronunciation**        | Right-click word → Smart IPA (Kokoro)                                              |
-| **Insert a pause**           | Silence button, &lt;sil:500ms&gt;, or blank line                                   |
-| **Hear current chunk**       | Preview                                                                            |
-| **Hear selected text**       | Highlight text to listen to, then click Preview                                    |
-| **Replay last preview**      | Play                                                                               |
-| **Flat question intonation** | Use bf_alice or af_jessica, or Blend them in                                       |
-| **Manage which voices show** | Tools → Voice Manager / Download Voices                                            |
-| **Qwen style note**          | Select a Qwen voice then click Instruct… button that appears below voice dropdown. |
-| **Phantom sound**            | See Phantom Sounds below                                                           |
+|**Task**|**How**|
+|-|-|
+|**Add pronunciation**|Right-click word → Smart IPA (Kokoro)|
+|**Insert a pause**|Silence button, <sil:500ms>, or blank line|
+|**Hear current chunk**|Preview|
+|**Hear selected text**|Highlight text to listen to, then click Preview|
+|**Replay last preview**|Play|
+|**Flat question intonation**|Use bf\_alice or af\_jessica, or Blend them in|
+|**Manage which voices show**|Tools → Voice Manager / Download Voices|
+|**Qwen style note**|Select a Qwen voice then click Instruct… button that appears below voice dropdown.|
+|**Phantom sound**|See Phantom Sounds below|
 
 # **Getting Started**
 
@@ -124,9 +124,27 @@ Restore Chunk returns the text from the original split (.orig), not the last aut
 
 # **The Editor**
 
+**### Managing Line Breaks \& Subheaders on Import**
+
+**When importing story files (`.txt`, `.docx`, `.pdf`), the ingestion pipeline chunks text based on sentence punctuation. Because of this, layout elements like titles, subheaders, or list items that do not end with terminal punctuation (., ?, !) may get glued to the beginning of the next line (for example, a subheader line like \*Setting: Lightning Rod Ranch\* merging into \*Theme: Blessings\*).**
+
+**To preserve pure intonation and accurate preset gutter placement, NarraVoice \*\*never\*\* auto-inserts artificial punctuation or automatically modifies your text structures on import.** 
+
+**\*\*How to fix merged lines:\*\***
+
+**1. Open the affected text chunk in the \*\*Current Chunk Editor\*\*.**
+
+**2. Position your text cursor (caret) exactly where the original line break belongs.**
+
+**3. Press \*\*Enter\*\* to drop the text to a new line.** 
+
+
+**This instantly isolates the line, making it ready for a dedicated voice preset or gutter color without affecting the underlying text file synthesis weights.**
+
+
 ## **Smart IPA (Kokoro)**
 
-Right-click a word → Smart IPA. English words may offer more than one reading; otherwise eSpeak NG is used. You can insert a Kokoro override \[word\](/ipa/) or add the word to the global substitution list.
+Right-click a word → Smart IPA. English words may offer more than one reading; otherwise eSpeak NG is used. You can insert a Kokoro override \[word](/ipa/) or add the word to the global substitution list.
 
 Do not also keep a global substitution and an inline IPA override on the same word. Smart IPA applies to Kokoro only — not to Qwen voices.
 
@@ -136,7 +154,7 @@ Tools → Pronunciation Substitutions. Global list for all projects. Whole-word 
 
 ## **Silence**
 
-Silence button, or type &lt;sil:500ms&gt;. A blank line between paragraphs inserts a short pause (~400 ms). Single newlines become spaces.
+Silence button, or type <sil:500ms>. A blank line between paragraphs inserts a short pause (\~400 ms). Single newlines become spaces.
 
 ## **Chunk controls**
 
@@ -156,9 +174,9 @@ Voice, Rate, Pitch (semitones), Volume. Pitch changes overall pitch; it does not
 
 ## **Recommended Kokoro voices for prosody**
 
-• bf_alice — best overall question rise/fall
+• bf\_alice — best overall question rise/fall
 
-• af_jessica — subtler but real uptick
+• af\_jessica — subtler but real uptick
 
 Blend (⚗) can mix up to three Kokoro voices into a custom voice.
 
@@ -178,16 +196,16 @@ There are two places instruct can come from:
 
 #### Instruct… (next to Voice)
 
-- Applies to the **current chunk** and to any text that is **not** marked with a preset.
-- Session only — not saved with the project. Closing the app clears it.
-- Use for one-off experiments or a temporary tone on the whole chunk.
+* Applies to the **current chunk** and to any text that is **not** marked with a preset.
+* Session only — not saved with the project. Closing the app clears it.
+* Use for one-off experiments or a temporary tone on the whole chunk.
 
 #### Preset Instruct…
 
-- Appears only when a **named preset** is selected **and** that preset uses a Qwen voice.
-- Opens the same dialog; the text is stored on that preset in project.json.
-- Every line marked with that preset uses its instruct when rendering.
-- Survives restarts and is the right place for lasting character or scene styles (e.g. "Speak happily", "Speak angrily").
+* Appears only when a **named preset** is selected **and** that preset uses a Qwen voice.
+* Opens the same dialog; the text is stored on that preset in project.json.
+* Every line marked with that preset uses its instruct when rendering.
+* Survives restarts and is the right place for lasting character or scene styles (e.g. "Speak happily", "Speak angrily").
 
 **Priority when rendering a segment**
 
@@ -199,14 +217,14 @@ There are two places instruct can come from:
 
 Presets store a reusable voice setup for gutter markers:
 
-| Setting        | Saved?                                    |
-| -------------- | ----------------------------------------- |
-| Voice          | Yes                                       |
-| Rate           | Yes                                       |
-| Pitch          | Yes                                       |
-| Volume         | Yes                                       |
-| Color (gutter) | Yes                                       |
-| Instruct       | Yes (via **Preset Instruct…**, Qwen only) |
+|Setting|Saved?|
+|-|-|
+|Voice|Yes|
+|Rate|Yes|
+|Pitch|Yes|
+|Volume|Yes|
+|Color (gutter)|Yes|
+|Instruct|Yes (via **Preset Instruct…**, Qwen only)|
 
 **Save** — writes the current Voice / Rate / Pitch / Volume (and color) into the selected preset, or creates a new one. Existing instruct on that preset is kept; change instruct with **Preset Instruct…**.
 
@@ -222,9 +240,9 @@ Qwen voices appear under Qwen3-TTS. Selecting one shows Instruct….
 
 • Python (developed and tested on 3.13.14)
 
-• qwen_server.py and model files under models\\Qwen\\ (or path in config)
+• qwen\_server.py and model files under models\\Qwen\\ (or path in config)
 
-• First use starts a local server at <http://127.0.0.1:8765>, or reuses one already running
+• First use starts a local server at [http://127.0.0.1:8765](http://127.0.0.1:8765), or reuses one already running
 
 ## **Instruct…**
 
@@ -232,10 +250,10 @@ Optional short delivery note: pace, energy, mood. Keep it brief. Long story-like
 
 ## **What differs from Kokoro**
 
-- Use normal spelling — no \[word\](/ipa/) overrides
-- No Kokoro voice-file blend for Qwen speakers
-- Pronunciation is largely the model's job. However, you can achieve better pronunciation by spelling words as they sound, not as they're actually spelled
-- Use Instruct for style
+* Use normal spelling — no \[word](/ipa/) overrides
+* No Kokoro voice-file blend for Qwen speakers
+* Pronunciation is largely the model's job. However, you can achieve better pronunciation by spelling words as they sound, not as they're actually spelled
+* Use Instruct for style
 
 # **Previewing and Rendering**
 
@@ -263,15 +281,15 @@ About −6 to +6 semitones. Above roughly +5 can sound harsh. Pitch is overall p
 
 ## **Phantom sounds**
 
-Usually an empty segment from quotes, runs of punctuation, or too many blank lines. Prefer the Silence button or a single &lt;sil:…&gt; tag.
+Usually an empty segment from quotes, runs of punctuation, or too many blank lines. Prefer the Silence button or a single <sil:…> tag.
 
 ## **IPA + substitution conflict**
 
-Do not combine a global substitution and an inline \[word\](/ipa/) on the same string.
+Do not combine a global substitution and an inline \[word](/ipa/) on the same string.
 
 ## **Data location**
 
-Paths come from config.json beside the app. Large models can stay on a data drive. eSpeak NG is required for Smart IPA fallback unless espeak_path points at a full copy under your data folder.
+Paths come from config.json beside the app. Large models can stay on a data drive. eSpeak NG is required for Smart IPA fallback unless espeak\_path points at a full copy under your data folder.
 
 # **Keyboard Shortcuts**
 
@@ -291,8 +309,3 @@ Paths come from config.json beside the app. Large models can stay on a data driv
 
 • Qwen needs extra install (Python + server + models), also Qwen is much slower using CPU only
 
-<<<<<<< HEAD
-• Multi-voice dialogue in one sentence often sounds unnatural — presets work best for emotion with one narrator voice
-=======
-• Multi-voice dialogue in one sentence often sounds unnatural — presets work best for emotion with one narrator voice
->>>>>>> 46000f67776d7f6260e74c1248354b534ee1c8ae
