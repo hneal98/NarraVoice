@@ -131,6 +131,7 @@ Kokoro voices always ignore Instruct — pitch/rate/volume are the only controls
 ## Full Documentation
 
 See the [User Guide](./docs/NarraVoiceUserGuide.md) for the complete editor reference, keyboard shortcuts, and every setting in depth.
+Also see the [context document](./docs/NarraVoiceContext.md) for more technical information.
 
 ## License
 
