@@ -48,11 +48,11 @@ Primary use case: generate audiobooks with narrator control, presets, substituti
 
 # 2\. Architecture (high level)
 
-| Project            | Role                          |
+| Layer              | Role                          |
 | ------------------ | ----------------------------- |
-| NarraVoice/        | Main WPF UI                   |
-| NarraVoice.Core/   | Engine, services, models, IPA |
-| NarraVoice.Editor/ | SmartTextEditor, PresetGutter |
+| NarraVoice (UI)    | Main WPF UI                   |
+| Core               | Engine, services, models, IPA |
+| Editor             | SmartTextEditor, PresetGutter |
 
 Key types: RenderPipeline, NarraPlayback, AppConfig, QwenServerManager, SubstitutionService, IpaLookupService, ProjectManager.
 
