@@ -126,6 +126,7 @@ Kokoro voices always ignore Instruct — pitch/rate/volume are the only controls
 - **Heteronyms** (read/read, lead/lead, live/live, etc.) aren't resolved automatically — text-to-speech in general still struggles with these. NarraVoice gives you manual override tools rather than guessing; expect the occasional line to need a one-off fix.
 
 ## 🎧 NarraVoice Local Narration Studio
+
 ### System Requirements & Technical Documentation
 
 **Author Masterclass Bonus Asset** • *First Edition: August 2026*
