@@ -89,7 +89,7 @@ Qwen3 unlocks a second, higher-quality voice engine at the cost of extra setup a
 
 **New Project** → pick a story file (`.txt`, `.docx`, `.pdf`) → edit a chunk → **Preview**. Once all chunks in a story are rendered, **Merge** produces one MP3 under `audiobooks\`.
 
-**💡 Import Tip (Subheaders & Line Breaks):** Because NarraVoice splits chunks strictly at sentence boundaries, imported header lines or lines without punctuation (e.g., `.`, `?`, `!`) can sometimes merge with the line below them. If this happens, simply place your cursor at the break in the editor and press **Enter** to split them. NarraVoice does not auto-insert periods, ensuring your manual line splits match your gutter presets and intonation perfectly.
+** Import Tip (Subheaders & Line Breaks):** Because NarraVoice splits chunks strictly at sentence boundaries, imported header lines or lines without punctuation (e.g., `.`, `?`, `!`) can sometimes merge with the line below them. If this happens, simply place your cursor at the break in the editor and press **Enter** to split them. NarraVoice does not auto-insert periods, ensuring your manual line splits match your gutter presets and intonation perfectly.
 
 ## Quick Reference
 
@@ -125,6 +125,44 @@ Kokoro voices always ignore Instruct — pitch/rate/volume are the only controls
 - Don't combine a global substitution and an inline IPA override on the same word — pick one.
 - **Heteronyms** (read/read, lead/lead, live/live, etc.) aren't resolved automatically — text-to-speech in general still struggles with these. NarraVoice gives you manual override tools rather than guessing; expect the occasional line to need a one-off fix.
 
+## 🎧 NarraVoice Local Narration Studio
+### System Requirements & Technical Documentation
+**Author Masterclass Bonus Asset** • *First Edition: August 2026*
+NarraVoice is a professional desktop text-to-speech studio that runs **100% locally and privately** on your computer. Unlike corporate cloud platforms, there are no per-character subscription fees or external data tracking.
+---
+### System Requirements Matrix
+| Specification             | Minimum Requirement                   | Recommended Specification                    |
+| :------------------------ | :------------------------------------ | :------------------------------------------- |
+| **Operating System**      | Windows 10 (64-bit)                   | Windows 11 (64-bit)                          |
+| **Processor (CPU)**       | Intel Core i5 / AMD Ryzen 5 (4 Cores) | Intel Core i7 / AMD Ryzen 7 or higher        |
+| **Memory (RAM)**          | 8 GB                                  | 16 GB or higher                              |
+| **Storage**               | 2 GB free space (HDD)                 | 5 GB free space (SSD for fast model loading) |
+| **Execution Environment** | Standalone Executable (`.exe`)        | Local environment configuration              |
+*Note: Cloud runtimes, Linux containers, and macOS platforms are deliberately excluded from this specific standalone desktop architecture.*
+---
+### ⚠️ Known Limitations
+*“A tool that sounds confident isn't the same as a tool that's right.”* Always apply human judgment to automated outputs.
+* **Kokoro Prosody Limits:** Most generated voices can sound flat on question marks. For the best natural intonation, prefer `bf_alice`, `af_jessica`, or a custom voice blend.
+* **Pitch Control Constraints:** The pitch slider modifies the overall audio pitch, not the dynamic intonation contour of the sentence.
+* **ONNX Audio Warmup:** The ONNX runtime can cause a brief, audible click sound at the very start of short text segments.
+* **Non-Instant Cancellation:** Pressing the cancel button during an active ONNX generation cycle is not instant.
+* **Qwen Server Requirements:** Running the Qwen large language model requires Python, a local server configuration, and dedicated disk space to store model weights.
+* **Session State Volatility:** Session Instruct data is not persisted across application restarts by design to ensure data privacy.
+* **Resampling Loss:** Resampling pitched Kokoro audio segments to 24000 Hz for multi-preset mixes is theoretically lossy. In practice, it is completely fine for high-quality speech rendering (fixed August 2026 — resolving the previous silent mislabel bug).
+---
+### Core Engineering Dependencies
+NarraVoice is built on top of a highly optimized, open-source stack:
+* **`KokoroSharp` / `KokoroOnnx`** — Drives the core local Text-to-Speech engine.
+* **`NAudio` / `NAudio.Lame`** — Powers real-time audio playback and native MP3 file export.
+* **`AvalonEdit` & `ScottPlot`** — Composes the code/text editor interface and real-time audio wave visualizers.
+* **`Python 3.13.14`** — Required exclusively to orchestrate the backend Qwen model server.
+* **`eSpeak NG`** — Utilized as a smart International Phonetic Alphabet (IPA) fallback tool.
+---
+### 🔗 Technical Support & Access
+The software is entirely free to download, inspect, and compile:
+**Repository Link:** [https://github.com](https://github.com)
+**Permission Requests:** NealKinkead@gmail.com
+
 ## Troubleshooting
 
 **Phantom sounds** — usually an empty segment caused by stray quote characters, runs of punctuation, or too many blank lines. Prefer the Silence button or a single `<sil:...>` tag over blank lines for pacing.
@@ -150,3 +188,5 @@ Also see the [context document](./docs/NarraVoiceContext.md) for more technical 
 NarraVoice is licensed under the MIT License — see [LICENSE](LICENSE).
 
 Third-party packages and user-installed models are covered in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Kokoro and Qwen3-TTS model weights are Apache 2.0 and are not redistributed with this project; download them separately.
+
+
