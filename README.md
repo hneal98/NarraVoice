@@ -125,8 +125,8 @@ Kokoro voices always ignore Instruct — pitch/rate/volume are the only controls
 - Don't combine a global substitution and an inline IPA override on the same word — pick one.
 - **Heteronyms** (read/read, lead/lead, live/live, etc.) aren't resolved automatically — text-to-speech in general still struggles with these. NarraVoice gives you manual override tools rather than guessing; expect the occasional line to need a one-off fix.
 
-## 🎧 NarraVoice Local Narration Studio
-### System Requirements & Technical Documentation
+# 🎧 NarraVoice Local Narration Studio
+## System Requirements & Technical Documentation
 **Author Masterclass Bonus Asset** • *First Edition: August 2026*
 NarraVoice is a professional desktop text-to-speech studio that runs **100% locally and privately** on your computer. Unlike corporate cloud platforms, there are no per-character subscription fees or external data tracking.
 ---
