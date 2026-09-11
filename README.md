@@ -165,8 +165,6 @@ The software is entirely free to download, inspect, and compile:
 
 ## Troubleshooting
 
-**Phantom sounds** — usually an empty segment caused by stray quote characters, runs of punctuation, or too many blank lines. Prefer the Silence button or a single `<sil:...>` tag over blank lines for pacing.
-
 **Pitch** — stay roughly within −6 to +6 semitones; above about +5 tends to sound harsh. Pitch changes overall pitch only — it's not a substitute for a voice with better natural prosody.
 
 ## Known Limitations
