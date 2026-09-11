@@ -132,7 +132,9 @@ Kokoro voices always ignore Instruct — pitch/rate/volume are the only controls
 **Author Masterclass Bonus Asset** • *First Edition: August 2026*
 
 NarraVoice is a professional desktop text-to-speech studio that runs **100% locally and privately** on your computer. Unlike corporate cloud platforms, there are no per-character subscription fees or external data tracking.
+
 ---
+
 ### System Requirements Matrix
 | Specification             | Minimum Requirement                   | Recommended Specification                    |
 | :------------------------ | :------------------------------------ | :------------------------------------------- |
