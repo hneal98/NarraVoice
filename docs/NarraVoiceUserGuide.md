@@ -279,10 +279,6 @@ Optional short delivery note: pace, energy, mood. Keep it brief. Long story-like
 
 About −6 to +6 semitones. Above roughly +5 can sound harsh. Pitch is overall pitch, not a substitute for choosing a voice with better prosody.
 
-## **Phantom sounds**
-
-Usually an empty segment from quotes, runs of punctuation, or too many blank lines. Prefer the Silence button or a single <sil:…> tag.
-
 ## **IPA + substitution conflict**
 
 Do not combine a global substitution and an inline \[word](/ipa/) on the same string.
@@ -308,4 +304,93 @@ Paths come from config.json beside the app. Large models can stay on a data driv
 • Cancel during synthesis is not instant and sometimes doesn't work at all
 
 • Qwen needs extra install (Python + server + models), also Qwen is much slower using CPU only
+
+# 🎧 NarraVoice Local Narration Studio
+
+### System Requirements & Technical Documentation
+
+**Author Masterclass Bonus Asset** • *First Edition: August 2026*
+
+NarraVoice is a professional desktop text-to-speech studio that runs **100% locally and privately** on your computer. Unlike corporate cloud platforms, there are no per-character subscription fees or external data tracking.
+
+---
+
+### 💻 System Requirements Matrix
+
+
+
+| Specification             | Minimum Requirement                   | Recommended Specification                    |
+| :------------------------ | :------------------------------------ | :------------------------------------------- |
+| **Operating System**      | Windows 10 (64-bit)                   | Windows 11 (64-bit)                          |
+| **Processor (CPU)**       | Intel Core i5 / AMD Ryzen 5 (4 Cores) | Intel Core i7 / AMD Ryzen 7 or higher        |
+| **Memory (RAM)**          | 8 GB                                  | 16 GB or higher                              |
+| **Storage**               | 2 GB free space (HDD)                 | 5 GB free space (SSD for fast model loading) |
+| **Execution Environment** | Standalone Executable (`.exe`)        | Local environment configuration              |
+
+
+*Note: Cloud runtimes, Linux containers, and macOS platforms are deliberately excluded from this specific standalone desktop architecture.*
+
+---
+
+### ⚠️ Known Limitations
+
+💡 *“A tool that sounds confident isn't the same as a tool that's right.”* Always apply human judgment to automated outputs.
+
+
+* **Kokoro Prosody Limits:** Most generated voices can sound flat on question marks. For the best natural intonation, prefer `bf_alice`, `af_jessica`, or a custom voice blend.
+
+* **Pitch Control Constraints:** The pitch slider modifies the overall audio pitch, not the dynamic intonation contour of the sentence.
+
+* **ONNX Audio Warmup:** The ONNX runtime can cause a brief, audible click sound at the very start of short text segments.
+
+* **Non-Instant Cancellation:** Pressing the cancel button during an active ONNX generation cycle is not instant.
+
+* **Qwen Server Requirements:** Running the Qwen large language model requires Python, a local server configuration, and dedicated disk space to store model weights.
+
+* **Session State Volatility:** Session Instruct data is not persisted across application restarts by design to ensure data privacy.
+
+* **Resampling Loss:** Resampling pitched Kokoro audio segments to 24000 Hz for multi-preset mixes is theoretically lossy. In practice, it is completely fine for high-quality speech rendering (fixed August 2026 — resolving the previous silent mislabel bug).
+
+
+---
+
+
+### 📦 Core Engineering Dependencies
+
+NarraVoice is built on top of a highly optimized, open-source stack:
+
+* **`KokoroSharp` / `KokoroOnnx`** — Drives the core local Text-to-Speech engine.
+
+* **`NAudio` / `NAudio.Lame`** — Powers real-time audio playback and native MP3 file export.
+
+* **`AvalonEdit` & `ScottPlot`** — Composes the code/text editor interface and real-time audio wave visualizers.
+
+* **`Python 3.13.14`** — Required exclusively to orchestrate the backend Qwen model server.
+
+* **`eSpeak NG`** — Utilized as a smart International Phonetic Alphabet (IPA) fallback tool.
+
+
+---
+
+
+### 🔗 Technical Support & Access
+
+The software is entirely free to download, inspect, and compile:
+
+👉 **Repository Link:** [https://github.com](https://github.com)
+
+📧 **Permission Requests:** NealKinkead@gmail.com
+
+---
+
+## 🎨 Master Your Manuscript Before You Narrate
+
+NarraVoice is designed to turn your story files into high-quality, local audiobooks without cloud fees. But an audio engine is only as good as the prose it is reading. If your text is filled with repetitive algorithmic ticks, flat emotional delivery, or lazy dialogue clichés, local voices like Kokoro or Qwen3 will expose those flaws instantly.
+
+If you want to master the craft of collaborative writing and learn how to break the repetitive habits of AI algorithms, check out the author's premium toolkit: **"AI Writing Without the Bobblehead Effect."**
+
+This comprehensive package includes the core 59-page handbook, **The AI Red Flag Auditor** line-by-line diagnostic checklist, and **The Creative Control Blueprint** to help you keep total human ownership of your stories.
+
+👉 **Get the Complete System Here:** https://nealkin.gumroad.com/l/bobblehead-effect-toolkit
+
 
