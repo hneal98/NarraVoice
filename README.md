@@ -3,7 +3,7 @@
 Offline Windows TTS narration studio (Kokoro + optional Qwen3-TTS).  
 Not affiliated with narravoice.com.
 
-A local, offline text-to-speech narration studio for turning story files into audiobooks — no cloud APIs, no per-character billing, no subscription.
+NarraVoice is a free, open-source, local alternative to cloud TTS services like ElevenLabs — built for offline audiobook narration and multi-character voiceover on Windows. A local, offline text-to-speech narration studio for turning story files into audiobooks — no cloud APIs, no per-character billing, no subscription.
 
 **Two engines in one app**
 - **Kokoro** — fast, fully local, lightweight, and CPU-friendly
