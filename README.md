@@ -77,7 +77,7 @@ NarraVoice needs the Kokoro model to generate speech.
    ```
 3. After the first launch, you can also use **Tools → Voice Manager / Download Voices** to get missing English or other language voices.
 
-### eSpeak NG (Recommended)
+### eSpeak NG (Required)
 
 Helps with pronunciation and IPA support.
 
